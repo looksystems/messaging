@@ -23,8 +23,6 @@ IMPORTANT
 
 If you want to use AWS SQS or SNS, you will need to set-up the environment variables required by the [AWS PHP SDK](https://github.com/aws/aws-sdk-php) - see [transports](docs/transports.md) for more details.
 
-_(To follow, details of how to set-up workflow or automated install scripts)_
-
 **To send/dispatch a message:**
 
 ```
