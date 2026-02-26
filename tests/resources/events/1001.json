@@ -1,0 +1,110 @@
+{
+    "id": 1001,
+    "timestamp": "2024-03-15T10:22:18.000000Z",
+    "entity_type": "order",
+    "entity_id": 50123,
+    "event_type": "completed",
+    "event_payload": {
+        "uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "customer_id": null,
+        "warehouse_id": null,
+        "notes": null,
+        "discount_code": 6,
+        "discount_text": "loyalty",
+        "total_amount": 0,
+        "total_text": "pending",
+        "express": false,
+        "gift": false,
+        "currency": "gbp",
+        "line_items": {
+            "item_8a3f29bc01d4e567f8901234abcdef00": {
+                "id": "8a3f29bc01d4e567f8901234abcdef00",
+                "type": "physical",
+                "name": "Wireless Keyboard",
+                "shipping_addresses": [
+                    {
+                        "address_line_1": "Acme Corp",
+                        "address_line_2": "Innovation Park",
+                        "address_line_3": "Bristol, Avon",
+                        "country": "United Kingdom",
+                        "postcode": "BS1 4DJ"
+                    }
+                ],
+                "telephones": [
+                    {
+                        "number": "0800 100 2000"
+                    }
+                ],
+                "fulfillment": {
+                    "requires_signature": true
+                }
+            },
+            "item_c4d5e6f78901a234b567c890def12345": {
+                "id": "c4d5e6f78901a234b567c890def12345",
+                "type": "physical",
+                "name": "Ergonomic Mouse",
+                "shipping_addresses": [
+                    {
+                        "address_line_1": "Globe Logistics Ltd",
+                        "address_line_2": "Enterprise Way",
+                        "town": "Manchester",
+                        "county": "Greater Manchester",
+                        "country": "United Kingdom",
+                        "postcode": "M1 2AB"
+                    }
+                ],
+                "telephones": [
+                    {
+                        "number": "0300 400 5000"
+                    }
+                ],
+                "fulfillment": {
+                    "requires_signature": true
+                }
+            },
+            "item_607": {
+                "id": 607,
+                "type": "digital",
+                "name": "Software License Key",
+                "shipping_addresses": [
+                    {
+                        "address_1": "Digital Delivery",
+                        "address_2": "PO Box 500",
+                        "town": "London",
+                        "country": "United Kingdom",
+                        "postcode": "EC1A 1BB"
+                    }
+                ],
+                "telephones": [
+                    "0800 555 1234"
+                ],
+                "emails": [
+                    "orders@example.com"
+                ],
+                "fulfillment": {
+                    "requires_signature": false,
+                    "requires_insurance": false,
+                    "requires_tracking": false,
+                    "leave_with_neighbour": false,
+                    "gift_wrap": null,
+                    "gift_message": null
+                }
+            }
+        }
+    },
+    "meta": null,
+    "initiated_by": 1234,
+    "initiator": {
+        "id": 1234,
+        "type": "sso",
+        "source": "example.com",
+        "identity": "xxx",
+        "label": null,
+        "groups": null,
+        "token": "xxx",
+        "roles": [
+            "admin",
+            "user"
+        ]
+    }
+}

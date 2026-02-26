@@ -1,0 +1,75 @@
+{
+    "name": "look/messaging",
+    "description": "framework agnostic message bus implementation for PHP",
+    "keywords": [
+        "message bus",
+        "messaging",
+        "command bus",
+        "event bus",
+        "query bus",
+        "sqs",
+        "sns"
+    ],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Adrian Keeling-Look",
+            "email": "adrianlook@looksystems.ltd.uk"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "galbar/jsonpath": "^3.0",
+        "nette/php-generator": "^4.1",
+        "opis/json-schema": "^2.3",
+        "psr/container": "^2.0",
+        "psr/log": "^3.0",
+        "ramsey/uuid": "^4.7"
+    },
+    "require-dev": {
+        "aws/aws-sdk-php": "^3",
+        "laravel/pint": "^1",
+        "mockery/mockery": "^1.6",
+        "pestphp/pest": "^2.20",
+        "php-di/php-di": "^7.0"
+    },
+    "suggest": {
+        "aws/aws-sdk-php": "required by sqs/sns transports"
+    },
+    "autoload": {
+        "psr-4": {
+            "Look\\Messaging\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "docs": "phpdoc --directory=src --target=docs/api",
+        "coverage": "XDEBUG_MODE=coverage ./vendor/bin/pest --coverage-html=docs/coverage",
+        "coverage-xml": "XDEBUG_MODE=coverage ./vendor/bin/pest --coverage-clover=coverage.xml",
+        "filter": "./vendor/bin/pest --filter",
+        "test": "./vendor/bin/pest --stop-on-failure",
+        "tests": "./vendor/bin/pest",
+        "csfix": "./vendor/bin/pint"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Look\\Messaging\\Laravel\\MessagingServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

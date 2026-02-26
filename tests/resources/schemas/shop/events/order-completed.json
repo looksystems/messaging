@@ -1,0 +1,184 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "http://example.com/events/shop/order-completed.json",
+    "$comment": "incomplete and not for production use",
+    "description": "shop order completed event schema",
+    "type": "object",
+    "properties": {
+        "entity_id": {
+            "type": "integer"
+        },
+        "entity_type": {
+            "type": "string",
+            "const": "order"
+        },
+        "event_type": {
+            "type": "string",
+            "const": "completed"
+        },
+        "event_payload": {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "type": "string"
+                },
+                "customer_id": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "warehouse_id": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "notes": {
+                    "type": ["string", "null"]
+                },
+                "discount_code": {
+                    "type": ["integer", "null"]
+                },
+                "discount_text": {
+                    "type": ["string", "null"]
+                },
+                "total_amount": {
+                    "type": ["integer", "null"]
+                },
+                "total_text": {
+                    "type": ["string", "null"]
+                },
+                "express": {
+                    "type": ["boolean", "null"]
+                },
+                "currency": {
+                    "type": ["string", "null"],
+                    "enum": [
+                        null,
+                        "aud",
+                        "eur",
+                        "gbp",
+                        "jpy",
+                        "nzd",
+                        "sek",
+                        "usd"
+                    ]
+                },
+                "line_items": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/line_item"
+                    }
+                },
+                "gift": {
+                    "type": ["boolean", "null"]
+                }
+            },
+            "additionalProperties": false
+        },
+        "test": {
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "entity_id",
+        "entity_type",
+        "event_type",
+        "event_payload"
+    ],
+    "additionalProperties": true,
+    "$defs": {
+        "address": {
+            "type": "object",
+            "properties": {
+                "address_line_1": {
+                    "type": "string"
+                },
+                "address_line_2": {
+                    "type": "string"
+                },
+                "town": {
+                    "type": "string"
+                },
+                "county": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "postcode": {
+                    "type": "string"
+                }
+            }
+        },
+        "line_item": {
+            "properties": {
+                "id": {
+                    "type": [
+                        "string",
+                        "integer"
+                    ]
+                },
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "physical",
+                        "digital",
+                        "subscription"
+                    ]
+                },
+                "shipping_addresses": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/address"
+                    }
+                },
+                "emails": {
+                    "type": "array",
+                    "items": {
+                        "type": ["string", "object"]
+                    }
+                },
+                "telephones": {
+                    "type": "array",
+                    "items": {
+                        "type": ["string", "object"]
+                    }
+                },
+                "fulfillment": {
+                    "type": "object",
+                    "properties": {
+                        "requires_signature": {
+                            "type": ["boolean", "null"]
+                        },
+                        "requires_insurance": {
+                            "type": ["boolean", "null"]
+                        },
+                        "requires_tracking": {
+                            "type": ["boolean", "null"]
+                        },
+                        "leave_with_neighbour": {
+                            "type": ["boolean", "null"]
+                        },
+                        "gift_wrap": {
+                            "type": ["boolean", "null"]
+                        },
+                        "gift_message": {
+                            "type": ["string","null"]
+                        }
+                    }
+                }
+            },
+            "required": [
+                "id",
+                "type",
+                "fulfillment"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

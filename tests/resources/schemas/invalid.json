@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "http://example.com/events/shop/order-completed.json",
+    "type": "unknown",
+    "properties": {
+        "env": {
+            "type": "unknown"
+        }
+    },
+    "required": [
+        "env",
+        "application_uuid",
+        "status"
+    ],
+    "additionalFields": false
+}

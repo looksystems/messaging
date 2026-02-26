@@ -1,0 +1,53 @@
+{
+    "id": 1002,
+    "timestamp": "2024-03-18T09:30:34.000000Z",
+    "entity_type": "order",
+    "entity_id": 50256,
+    "event_type": "completed",
+    "event_payload": {
+        "uuid": "f7e6d5c4-b3a2-1098-7654-321fedcba098",
+        "customer_id": null,
+        "warehouse_id": 136,
+        "notes": null,
+        "discount_code": 6,
+        "discount_text": "loyalty",
+        "total_amount": 0,
+        "total_text": "pending",
+        "express": true,
+        "gift": true,
+        "currency": "usd",
+        "line_items": {
+            "item_136": {
+                "id": 136,
+                "type": "subscription",
+                "name": "Premium Monthly Plan",
+                "shipping_addresses": [
+                    {
+                        "address_1": "Suite 400",
+                        "address_2": "30 Commerce Road",
+                        "town": "Edinburgh",
+                        "country": "United Kingdom",
+                        "postcode": "EH1 2DH"
+                    }
+                ],
+                "telephones": [
+                    "0345 600 7000"
+                ],
+                "emails": [
+                    "subscriptions@example.com"
+                ],
+                "fulfillment": {
+                    "requires_signature": true,
+                    "requires_insurance": false,
+                    "requires_tracking": true,
+                    "leave_with_neighbour": false,
+                    "gift_wrap": false,
+                    "gift_message": null
+                }
+            }
+        }
+    },
+    "meta": null,
+    "initiated_by": null,
+    "initiator": null
+}

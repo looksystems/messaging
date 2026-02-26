@@ -1,0 +1,20 @@
+[
+    {
+        "code": "namespace Events\\Shop;\n\nuse Events\\Shop\\OrderCompletedEvent\\EventPayload;\n\n\/**\n * http:\/\/example.com\/events\/shop\/order-completed.json\n *\/\nclass OrderCompletedEvent\n{\n\t#[\\required]\n\tpublic int $entity_id;\n\n\t#[\\required]\n\tpublic readonly string $entity_type = 'order';\n\n\t#[\\required]\n\tpublic readonly string $event_type = 'completed';\n\n\t#[\\required]\n\tpublic EventPayload $event_payload;\n\tpublic bool $test;\n\n\n\tpublic function __construct()\n\t{\n\t\t$this->event_payload = new \\Events\\Shop\\OrderCompletedEvent\\EventPayload;\n\t}\n}\n",
+        "class": "Events\\Shop\\OrderCompletedEvent",
+        "filename": "Events\/Shop\/OrderCompletedEvent.php",
+        "uri": "http:\/\/example.com\/events\/shop\/order-completed.json"
+    },
+    {
+        "code": "namespace Events\\Shop\\OrderCompletedEvent;\n\nuse Events\\Shop\\OrderCompletedEvent\\EventPayload\\LineItems;\n\n\/**\n * http:\/\/example.com\/events\/shop\/order-completed.json#event_payload\n *\/\nclass EventPayload\n{\n\tpublic string $uuid;\n\tpublic ?int $customer_id;\n\tpublic ?int $warehouse_id;\n\tpublic ?string $notes;\n\tpublic ?int $discount_code;\n\tpublic ?string $discount_text;\n\tpublic ?int $total_amount;\n\tpublic ?string $total_text;\n\tpublic ?bool $express;\n\tpublic ?string $currency;\n\tpublic LineItems $line_items;\n\tpublic ?bool $gift;\n}\n",
+        "class": "Events\\Shop\\OrderCompletedEvent\\EventPayload",
+        "filename": "Events\/Shop\/OrderCompletedEvent\/EventPayload.php",
+        "uri": "http:\/\/example.com\/events\/shop\/order-completed.json#event_payload"
+    },
+    {
+        "code": "namespace Events\\Shop\\OrderCompletedEvent\\EventPayload;\n\n\/**\n * http:\/\/example.com\/events\/shop\/order-completed.json#event_payload\/line_items\n *\/\nclass LineItems\n{\n}\n",
+        "class": "Events\\Shop\\OrderCompletedEvent\\EventPayload\\LineItems",
+        "filename": "Events\/Shop\/OrderCompletedEvent\/EventPayload\/LineItems.php",
+        "uri": "http:\/\/example.com\/events\/shop\/order-completed.json#event_payload\/line_items"
+    }
+]

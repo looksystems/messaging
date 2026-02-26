@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+>
+    <testsuites>
+        <testsuite name="Unit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory>tests/Feature</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory>app</directory>
+        </include>
+    </source>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="BCRYPT_ROUNDS" value="4"/>
+        <env name="CACHE_DRIVER" value="array"/>
+        <!-- <env name="DB_CONNECTION" value="sqlite"/> -->
+        <!-- <env name="DB_DATABASE" value=":memory:"/> -->
+        <env name="MAIL_MAILER" value="array"/>
+        <env name="QUEUE_CONNECTION" value="sync"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="TELESCOPE_ENABLED" value="false"/>
+        
+        <env name="AWS_ACCESS_KEY_ID" value="test-key"/>
+        <env name="AWS_REGION" value="eu-west-1"/>
+        <env name="AWS_SECRET_ACCESS_KEY" value="test-secret"/>
+        <env name="AWS_SNS_PREFIX" value="arn:aws:sns:eu-west-1:AWS_ACCOUNT"/>
+        <env name="AWS_SQS_PREFIX" value="https://sqs.eu-west-1.amazonaws.com/AWS_ACCOUNT"/>
+
+        <env name="MESSAGING_DEFAULT_SQS_QUEUES" value=""/>
+        <env name="MESSAGING_DEFAULT_SNS_TOPICS" value=""/>
+    </php>
+</phpunit>

@@ -1,0 +1,35 @@
+{
+    "id": 1003,
+    "timestamp": "2024-03-18T14:15:57.000000Z",
+    "entity_type": "order",
+    "entity_id": 50089,
+    "event_type": "completed",
+    "event_payload": {
+        "uuid": "12345678-abcd-ef01-2345-6789abcdef01",
+        "customer_id": null,
+        "warehouse_id": 723,
+        "notes": "Customer requested cancellation",
+        "discount_code": 5,
+        "discount_text": "none",
+        "total_amount": 1,
+        "total_text": "refunded",
+        "express": false,
+        "gift": false,
+        "currency": null
+    },
+    "meta": null,
+    "initiated_by": 1234,
+    "initiator": {
+        "id": 1234,
+        "type": "jwt",
+        "source": "api.example.com",
+        "identity": "3",
+        "label": null,
+        "groups": null,
+        "token": "xxx",
+        "roles": [
+            "support",
+            "user"
+        ]
+    }
+}

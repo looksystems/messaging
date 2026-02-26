@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.3/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+>
+    <testsuites>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory suffix=".php">./src</directory>
+        </include>
+    </source>
+    <coverage
+        includeUncoveredFiles="true"
+        pathCoverage="false"
+        ignoreDeprecatedCodeUnits="true"
+        disableCodeCoverageIgnore="false">
+    </coverage>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="AWS_ACCESS_KEY_ID" value="test-key-id"/>
+        <env name="AWS_REGION" value="eu-west-1"/>
+        <env name="AWS_SECRET_ACCESS_KEY" value="test-secret-key"/>
+        <env name="AWS_SNS_PREFIX" value="arn:aws:sns:eu-west-1:AWS_ACCOUNT"/>
+        <env name="AWS_SQS_PREFIX" value="https://sqs.eu-west-1.amazonaws.com/AWS_ACCOUNT"/>
+        <env name="TEST_SQS_QUEUE" value="TestQueue"/>
+        <env name="TEST_SNS_TOPIC" value="TestTopic"/>
+    </php>
+</phpunit>
