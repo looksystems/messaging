@@ -8,7 +8,7 @@ First add the repository to your composer.json:
 "repositories": {
     "look-messagebus": {
         "type": "vcs",
-        "url": "https://github.com/looksystems/messagebus.git"
+        "url": "https://github.com/looksystems/messaging.git"
     }
 }
 ```
