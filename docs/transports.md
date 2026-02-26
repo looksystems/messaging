@@ -21,7 +21,7 @@ For SQS you can set-up your queue prefix.
 For example:
 
 ```
-AWS_SQS_PREFIX="https://sqs.eu-west-1.amazonaws.com/457947850338"
+AWS_SQS_PREFIX="https://sqs.eu-west-1.amazonaws.com/AWS_ACCOUNT"
 ```
 
 For SNS you can set-up your topic prefix.
@@ -29,7 +29,7 @@ For SNS you can set-up your topic prefix.
 For example:
 
 ```
-AWS_SNS_PREFIX="arn:aws:sns:eu-west-1:457947850338"
+AWS_SNS_PREFIX="arn:aws:sns:eu-west-1:AWS_ACCOUNT"
 ```
 
 By default the SQS and SNS relays will send a MessageDeduplicationId.
@@ -44,14 +44,14 @@ For example, individually:
 
 ```
 // using string syntax (same as relays)
-MessageBus::registerTransport('finder-ingest', 'sqs:FinderJobs-dev');
+MessageBus::registerTransport('test-queue', 'sqs:TestQueue');
 
 // using array syntax
 MessageBus::registerTransport(
-	'finder-events',
+	'test-broadcast',
 	[
 		'type' => 'sns',
-		'queues' => 'FinderServiceEvents-dev.fifo',
+		'queues' => 'TestTopic.fifo',
 		'decorate' => [
 			'envelope:environment'
 		],
@@ -63,8 +63,8 @@ Or as a list (usually loaded from config):
 
 ```
 MessageBus::registerTransports([
-	'finder-ingest' => 'sqs:FinderJobs-dev',
-	'finder-events' => 'sns:FinderServiceEvents-dev.fifo',
+	'test-queue' => 'sqs:TestQueue',
+	'test-broadcast' => 'sns:TestTopic.fifo',
 	// etc
 ])
 ```
@@ -72,13 +72,13 @@ MessageBus::registerTransports([
 These can then be used in relays:
 
 ```
-MessageBus::relay('finder.events.*', 'finder-events');
+MessageBus::relay('test.events.*', 'test-events');
 ```
 
 Or when receiving:
 
 ```
-MessageBus::receive('finder-ingest')->dispatch();
+MessageBus::receive('test-events')->dispatch();
 ```
 
 #### Custom transports
