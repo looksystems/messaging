@@ -21,15 +21,7 @@ composer require looksystems\messagebus
 
 IMPORTANT
 
-The environment on which you are installing the package will need a github access token to be able to pull the from the lookfintech.com repository.
-
-If required, you can generate a token here:
-
-https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token
-
-When ```composer install``` is run, it will (only once per environment) prompt for the token.
-
-Finally, if you want to use AWS SQS or SNS, you will need to set-up the environment variables required by the [AWS PHP SDK](https://github.com/aws/aws-sdk-php) - see [transports](docs/transports.md) for more details.
+If you want to use AWS SQS or SNS, you will need to set-up the environment variables required by the [AWS PHP SDK](https://github.com/aws/aws-sdk-php) - see [transports](docs/transports.md) for more details.
 
 _(To follow, details of how to set-up workflow or automated install scripts)_
 
