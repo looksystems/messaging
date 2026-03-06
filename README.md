@@ -1,5 +1,21 @@
 ## Message Bus
 
+### Overview
+
+Message Bus is a PHP library that implements the broker pattern to decouple message dispatching from transport implementation. It provides a middleware pipeline for transforming, validating, handling, and relaying messages — making it easy to build event-driven architectures for modular monoliths and microservices.
+
+**Key features:**
+
+- **Middleware pipeline** — messages flow through a configurable chain of transform, validate, handle, and relay stages
+- **AWS SQS/SNS transports** — built-in support for distributed messaging via Amazon SQS (point-to-point) and SNS (pub/sub)
+- **Wildcard matching** — register handlers and relays using patterns like `namespace.*` or `*:fallback`
+- **Batching** — collect and dispatch messages together as a unit
+- **Schema validation** — validate message payloads against JSON schemas
+- **DTO code generation** — generate PHP DTO classes from JSON schemas
+- **Framework integrations** — first-class support for Laravel and Slim
+
+The library is designed to let you start with in-process message handling in a modular monolith and later split into separate services by adding SQS/SNS relays — without changing your application code.
+
 ### Getting started
 
 First add the repository to your composer.json:
