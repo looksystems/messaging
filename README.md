@@ -14,7 +14,7 @@ Message Bus is a PHP library that implements the broker pattern to decouple mess
 - **DTO code generation** — generate PHP DTO classes from JSON schemas
 - **Framework integrations** — first-class support for Laravel and Slim
 
-The library is designed to let you start with in-process message handling in a modular monolith and later split into separate services by adding SQS/SNS relays — without changing your application code.
+The library is designed to let you start with in-process message handling in a modular monolith, move to async queue workers, and later split into separate services by adding SQS/SNS relays — without changing your application code.
 
 ### Getting started
 
